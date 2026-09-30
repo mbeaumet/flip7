@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flip 7 - Score</title>
+
+    <link rel="stylesheet" href="flip7.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <header class="header">
+
+        <div>
+            <h1>FLIP 7</h1>
+            <p>Calculateur de score</p>
+        </div>
+
+        <button id="newGameBtn" class="btn danger">
+            Nouvelle partie
+        </button>
+
+    </header>
+
+
+    <!-- CONFIGURATION -->
+
+    <section id="setup" class="panel">
+
+        <h2>Nouvelle partie</h2>
+
+        <div class="add-player">
+
+            <input
+                id="playerName"
+                type="text"
+                placeholder="Nom du joueur"
+                maxlength="20"
+            >
+
+            <button id="addPlayerBtn" class="btn primary">
+                Ajouter
+            </button>
+
+        </div>
+
+        <div id="playersSetup"></div>
+
+        <button
+            id="startGameBtn"
+            class="btn success full"
+            disabled
+        >
+            Commencer la partie
+        </button>
+
+    </section>
+
+
+    <!-- JEU -->
+
+    <main id="game" class="hidden">
+
+        <div class="top-bar">
+
+            <div>
+                <span>Manche</span>
+                <strong id="roundNumber">1</strong>
+            </div>
+
+            <div>
+                <span>Objectif</span>
+                <strong>200</strong>
+            </div>
+
+        </div>
+
+
+        <!-- TABLEAU DES SCORES -->
+
+        <section id="scoreBoard" class="score-board"></section>
+
+
+        <!-- JOUEURS -->
+
+        <section id="playersArea"></section>
+
+
+        <!-- VALIDATION -->
+
+        <button
+            id="validateRoundBtn"
+            class="btn success full validate"
+        >
+            Valider la manche
+        </button>
+
+
+        <!-- HISTORIQUE -->
+
+        <section class="panel history">
+
+            <div class="history-title">
+
+                <h2>Historique</h2>
+
+                <button
+                    id="undoBtn"
+                    class="btn secondary"
+                >
+                    Annuler
+                </button>
+
+            </div>
+
+            <div id="history"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- VICTOIRE -->
+
+    <div id="winnerModal" class="modal hidden">
+
+        <div class="modal-box">
+
+            <h2>🏆 Partie terminée</h2>
+
+            <p id="winnerText"></p>
+
+            <button
+                id="closeWinnerBtn"
+                class="btn primary full"
+            >
+                Continuer
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="flip7.js"></script>
+
+</body>
+</html>
